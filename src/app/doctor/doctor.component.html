@@ -1,0 +1,70 @@
+<div class="mat-elevation-z8">
+  <table mat-table class="full-width-table" [dataSource]="dataSource">
+    <!-- Id Column -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef >Email</th>
+      <td mat-cell *matCellDef="let row">{{row.email}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="degree">
+      <th mat-header-cell *matHeaderCellDef >Degree</th>
+      <td mat-cell *matCellDef="let row">{{row.degree}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+
+    <div class="md-form">
+          <label for="form104">Email</label>
+          <input type="text" id="idinput" #idinput>
+    </div>
+    <div class="md-form">
+          <label for="form104">Degree</label>
+          <input type="text" id="desc" #descinput>
+    </div>
+    <div>
+      <button mat-raised-button color="primary" (click)="insertFunc(idinput.value, descinput.value)" >Insert</button>
+    </div>
+
+
+    <label for="select">Select what to delete:</label>
+    <select id="select" #select>
+      <option value="email">Email</option>
+      <option value="degree">Degree</option>
+    </select>
+    <div>
+    <label for="form104">Value</label>
+      <input type="text" id="value" #value>
+    </div>
+    <div>
+      <button mat-raised-button color="primary" (click)="deleteFunc(select.value, value.value)" >Delete</button>
+    </div>
+
+
+
+    <label for="select2">Select what to update:</label>
+    <select id="select2" #col>
+      <option value="email">Email</option>
+      <option value="degree">Degree</option>
+    </select>
+    <div>
+    <label for="form104">Value</label>
+      <input type="text" id="value" #val>
+    </div>
+    <label for="select3">Select where to update:</label>
+    <select id="select3" #cond>
+      <option value="email">Email</option>
+      <option value="degree">Degree</option>
+    </select>
+    <div>
+    <label for="form104">Value</label>
+      <input type="text" id="value" #cval>
+    </div>
+    <div>
+      <button mat-raised-button color="primary" (click)="updateFunc(col.value, val.value, cond.value, cval.value)" >Update</button>
+    </div>
+
+</div>

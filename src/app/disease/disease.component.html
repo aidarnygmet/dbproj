@@ -1,0 +1,92 @@
+<div class="mat-elevation-z8">
+  <table mat-table class="full-width-table" [dataSource]="dataSource">
+    <!-- Id Column -->
+    <ng-container matColumnDef="disease_code">
+      <th mat-header-cell *matHeaderCellDef >Disease Code</th>
+      <td mat-cell *matCellDef="let row">{{row.disease_code}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="pathogen">
+      <th mat-header-cell *matHeaderCellDef >Pathogen</th>
+      <td mat-cell *matCellDef="let row">{{row.pathogen}}</td>
+    </ng-container>
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef >Description</th>
+      <td mat-cell *matCellDef="let row">{{row.description}}</td>
+    </ng-container>
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef >ID</th>
+      <td mat-cell *matCellDef="let row">{{row.id}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+
+    <div class="md-form">
+          <label for="form104">Disease Code</label>
+          <input type="text" id="idinput" #discinput>
+    </div>
+    <div class="md-form">
+          <label for="form104">Pathogen</label>
+          <input type="text" id="desc" #patinput>
+    </div>
+    <div class="md-form">
+          <label for="form104">Description</label>
+          <input type="text" id="desc" #descinput>
+    </div>
+    <div class="md-form">
+          <label for="form104">ID</label>
+          <input type="text" id="desc" #idinput>
+    </div>
+    <div>
+      <button mat-raised-button color="primary" (click)="insertFunc(discinput.value,patinput.value,  descinput.value, idinput.value)" >Insert</button>
+    </div>
+
+
+    <label for="select">Select what to delete:</label>
+    <select id="select" #select>
+      <option value="disease_code">Disease Code</option>
+      <option value="pathogen">Pathogen</option>
+      <option value="description">Description</option>
+      <option value="id">ID</option>
+    </select>
+    <div>
+    <label for="form104">Value</label>
+      <input type="text" id="value" #value>
+    </div>
+    <div>
+      <button mat-raised-button color="primary" (click)="deleteFunc(select.value, value.value)" >Delete</button>
+    </div>
+
+
+
+    <label for="select2">Select what to update:</label>
+    <select id="select2" #col>
+      <option value="disease_code">Disease Code</option>
+      <option value="pathogen">Pathogen</option>
+      <option value="description">Description</option>
+      <option value="id">ID</option>
+    </select>
+    <div>
+    <label for="form104">Value</label>
+      <input type="text" id="value" #val>
+    </div>
+    <label for="select3">Select where to update:</label>
+    <select id="select3" #cond>
+      <option value="disease_code">Disease Code</option>
+      <option value="pathogen">Pathogen</option>
+      <option value="description">Description</option>
+      <option value="id">ID</option>
+    </select>
+    <div>
+    <label for="form104">Value</label>
+      <input type="text" id="value" #cval>
+    </div>
+    <div>
+      <button mat-raised-button color="primary" (click)="updateFunc(col.value, val.value, cond.value, cval.value)" >Update</button>
+    </div>
+
+</div>
