@@ -120,7 +120,7 @@ export class AppService {
 
 
   getps(): Observable<any>{
-    return this.httpClient.get('http://localhost:3000/public-servant');
+    return this.httpClient.get('https://aidar-dbback.herokuapp.com/public-servant');
   }
   insertps(id:string, desc:string):Observable<any>{
     return this.httpClient.post('https://aidar-dbback.herokuapp.com/public-servant',{id:id, desc:desc});
