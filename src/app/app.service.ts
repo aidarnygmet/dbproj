@@ -10,10 +10,10 @@ export class AppService {
   constructor(public httpClient:HttpClient) { }
 
   getCountry(): Observable<any>{
-    return this.httpClient.get('http://localhost:3000/country');
+    return this.httpClient.get('https://aidar-dbback.herokuapp.com/country');
   }
   insertCountry(id:string, desc:string):Observable<any>{
-    return this.httpClient.post('http://localhost:3000/country',{id:id, desc:desc});
+    return this.httpClient.post('https://aidar-dbback.herokuapp.com/country',{id:id, desc:desc});
   }
   deleteCountry(col:string, val:string):Observable<any>{
     const options = {
@@ -23,19 +23,19 @@ export class AppService {
         val: val,
         },
     };
-    return this.httpClient.delete('http://localhost:3000/country', options);
+    return this.httpClient.delete('https://aidar-dbback.herokuapp.com/country', options);
   }
   updateCountry(col:string, val:string, cond:string, cval:string):Observable<any>{
-    return this.httpClient.put('http://localhost:3000/country', {col: col,val: val,cond:cond,cval:cval},);
+    return this.httpClient.put('https://aidar-dbback.herokuapp.com/country', {col: col,val: val,cond:cond,cval:cval},);
   }
 
 
 
   getDiscover(): Observable<any>{
-    return this.httpClient.get('http://localhost:3000/discover');
+    return this.httpClient.get('https://aidar-dbback.herokuapp.com/discover');
   }
   insertDiscover(cname:string, disC:string, fed:string):Observable<any>{
-    return this.httpClient.post('http://localhost:3000/discover',{cname:cname, disC:disC, fed:fed});
+    return this.httpClient.post('https://aidar-dbback.herokuapp.com/discover',{cname:cname, disC:disC, fed:fed});
   }
   deleteDiscover(col:string, val:string):Observable<any>{
     const options = {
@@ -45,19 +45,19 @@ export class AppService {
         val: val,
         },
     };
-    return this.httpClient.delete('http://localhost:3000/discover', options);
+    return this.httpClient.delete('https://aidar-dbback.herokuapp.com/discover', options);
   }
   updateDiscover(col:string, val:string, cond:string, cval:string):Observable<any>{
-    return this.httpClient.put('http://localhost:3000/discover', {col: col,val: val,cond:cond,cval:cval},);
+    return this.httpClient.put('https://aidar-dbback.herokuapp.com/discover', {col: col,val: val,cond:cond,cval:cval},);
   }
 
 
 
   getDisease(): Observable<any>{
-    return this.httpClient.get('http://localhost:3000/disease');
+    return this.httpClient.get('https://aidar-dbback.herokuapp.com/disease');
   }
   insertDisease(disc:string, pat:string, desc:string, id:string):Observable<any>{
-    return this.httpClient.post('http://localhost:3000/disease',{disc: disc, pat:pat, desc:desc, id:id});
+    return this.httpClient.post('https://aidar-dbback.herokuapp.com/disease',{disc: disc, pat:pat, desc:desc, id:id});
   }
   deleteDisease(col:string, val:string):Observable<any>{
     const options = {
@@ -67,19 +67,19 @@ export class AppService {
         val: val,
         },
     };
-    return this.httpClient.delete('http://localhost:3000/disease', options);
+    return this.httpClient.delete('https://aidar-dbback.herokuapp.com/disease', options);
   }
   updateDisease(col:string, val:string, cond:string, cval:string):Observable<any>{
-    return this.httpClient.put('http://localhost:3000/disease', {col: col,val: val,cond:cond,cval:cval},);
+    return this.httpClient.put('https://aidar-dbback.herokuapp.com/disease', {col: col,val: val,cond:cond,cval:cval},);
   }
 
 
 
   getDiseaseType(): Observable<any>{
-    return this.httpClient.get('http://localhost:3000/disease-type');
+    return this.httpClient.get('https://aidar-dbback.herokuapp.com/disease-type');
   }
   insertDiseaseType(id:string, desc:string):Observable<any>{
-    return this.httpClient.post('http://localhost:3000/disease-type',{id:id, desc:desc});
+    return this.httpClient.post('https://aidar-dbback.herokuapp.com/disease-type',{id:id, desc:desc});
   }
   deleteDiseaseType(col:string, val:string):Observable<any>{
     const options = {
@@ -89,19 +89,19 @@ export class AppService {
         val: val,
         },
     };
-    return this.httpClient.delete('http://localhost:3000/disease-type', options);
+    return this.httpClient.delete('https://aidar-dbback.herokuapp.com/disease-type', options);
   }
   updateDiseaseType(col:string, val:string, cond:string, cval:string):Observable<any>{
-    return this.httpClient.put('http://localhost:3000/disease-type', {col: col,val: val,cond:cond,cval:cval},);
+    return this.httpClient.put('https://aidar-dbback.herokuapp.com/disease-type', {col: col,val: val,cond:cond,cval:cval},);
   }
 
 
 
   getDoctor(): Observable<any>{
-    return this.httpClient.get('http://localhost:3000/doctor');
+    return this.httpClient.get('https://aidar-dbback.herokuapp.com/doctor');
   }
   insertDoctor(id:string, desc:string):Observable<any>{
-    return this.httpClient.post('http://localhost:3000/doctor',{id:id, desc:desc});
+    return this.httpClient.post('https://aidar-dbback.herokuapp.com/doctor',{id:id, desc:desc});
   }
   deleteDoctor(col:string, val:string):Observable<any>{
     const options = {
@@ -111,10 +111,10 @@ export class AppService {
         val: val,
         },
     };
-    return this.httpClient.delete('http://localhost:3000/doctor', options);
+    return this.httpClient.delete('https://aidar-dbback.herokuapp.com/doctor', options);
   }
   updateDoctor(col:string, val:string, cond:string, cval:string):Observable<any>{
-    return this.httpClient.put('http://localhost:3000/doctor', {col: col,val: val,cond:cond,cval:cval},);
+    return this.httpClient.put('https://aidar-dbback.herokuapp.com/doctor', {col: col,val: val,cond:cond,cval:cval},);
   }
 
 
@@ -123,7 +123,7 @@ export class AppService {
     return this.httpClient.get('http://localhost:3000/public-servant');
   }
   insertps(id:string, desc:string):Observable<any>{
-    return this.httpClient.post('http://localhost:3000/public-servant',{id:id, desc:desc});
+    return this.httpClient.post('https://aidar-dbback.herokuapp.com/public-servant',{id:id, desc:desc});
   }
   deleteps(col:string, val:string):Observable<any>{
     const options = {
@@ -133,20 +133,20 @@ export class AppService {
         val: val,
         },
     };
-    return this.httpClient.delete('http://localhost:3000/public-servant', options);
+    return this.httpClient.delete('https://aidar-dbback.herokuapp.com/public-servant', options);
   }
   updateps(col:string, val:string, cond:string, cval:string):Observable<any>{
-    return this.httpClient.put('http://localhost:3000/public-servant', {col: col,val: val,cond:cond,cval:cval},);
+    return this.httpClient.put('https://aidar-dbback.herokuapp.com/public-servant', {col: col,val: val,cond:cond,cval:cval},);
   }
 
 
 
 
   getRec(): Observable<any>{
-    return this.httpClient.get('http://localhost:3000/record');
+    return this.httpClient.get('https://aidar-dbback.herokuapp.com/record');
   }
   insertRec(disc:string, pat:string, desc:string, id:string, tp:string):Observable<any>{
-    return this.httpClient.post('http://localhost:3000/record',{email: disc, cname:pat, disc:desc, td:id, tp:tp});
+    return this.httpClient.post('https://aidar-dbback.herokuapp.com/record',{email: disc, cname:pat, disc:desc, td:id, tp:tp});
   }
   deleteRec(col:string, val:string):Observable<any>{
     const options = {
@@ -156,19 +156,19 @@ export class AppService {
         val: val,
         },
     };
-    return this.httpClient.delete('http://localhost:3000/record', options);
+    return this.httpClient.delete('https://aidar-dbback.herokuapp.com/record', options);
   }
   updateRec(col:string, val:string, cond:string, cval:string):Observable<any>{
-    return this.httpClient.put('http://localhost:3000/record', {col: col,val: val,cond:cond,cval:cval},);
+    return this.httpClient.put('https://aidar-dbback.herokuapp.com/record', {col: col,val: val,cond:cond,cval:cval},);
   }
 
 
 
   getSpec(): Observable<any>{
-    return this.httpClient.get('http://localhost:3000/specialize');
+    return this.httpClient.get('https://aidar-dbback.herokuapp.com/specialize');
   }
   insertSpec(id:string, desc:string):Observable<any>{
-    return this.httpClient.post('http://localhost:3000/specialize',{id:id, desc:desc});
+    return this.httpClient.post('https://aidar-dbback.herokuapp.com/specialize',{id:id, desc:desc});
   }
   deleteSpec(col:string, val:string):Observable<any>{
     const options = {
@@ -178,20 +178,20 @@ export class AppService {
         val: val,
         },
     };
-    return this.httpClient.delete('http://localhost:3000/specialize', options);
+    return this.httpClient.delete('https://aidar-dbback.herokuapp.com/specialize', options);
   }
   updateSpec(col:string, val:string, cond:string, cval:string):Observable<any>{
-    return this.httpClient.put('http://localhost:3000/specialize', {col: col,val: val,cond:cond,cval:cval},);
+    return this.httpClient.put('https://aidar-dbback.herokuapp.com/specialize', {col: col,val: val,cond:cond,cval:cval},);
   }
 
 
 
 
   getUser(): Observable<any>{
-    return this.httpClient.get('http://localhost:3000/user');
+    return this.httpClient.get('https://aidar-dbback.herokuapp.com/user');
   }
   insertUser(disc:string, pat:string, desc:string, id:string, tp:string, cname:string):Observable<any>{
-    return this.httpClient.post('http://localhost:3000/user',{id: disc, desc:pat, sur:desc, sal:id, ph:tp, cname:cname});
+    return this.httpClient.post('https://aidar-dbback.herokuapp.com/user',{id: disc, desc:pat, sur:desc, sal:id, ph:tp, cname:cname});
   }
   deleteUser(col:string, val:string):Observable<any>{
     const options = {
@@ -201,9 +201,9 @@ export class AppService {
         val: val,
         },
     };
-    return this.httpClient.delete('http://localhost:3000/user', options);
+    return this.httpClient.delete('https://aidar-dbback.herokuapp.com/user', options);
   }
   updateUser(col:string, val:string, cond:string, cval:string):Observable<any>{
-    return this.httpClient.put('http://localhost:3000/user', {col: col,val: val,cond:cond,cval:cval},);
+    return this.httpClient.put('https://aidar-dbback.herokuapp.com/user', {col: col,val: val,cond:cond,cval:cval},);
   }
 }
